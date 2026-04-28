@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Asociación de Ayuda Cívica Levántate y Resplandece Oassis | Barcelona</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="mainHeader">
+        <div class="header-flotante-contenedor">
+            <nav class="hf-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mision.html">Visión</a></li>
+                    <li><a href="obra-social.html">Obra Social</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="hf-logo-link">
+                <img src="LOGO PNG.png" alt="Logo" class="hf-logo">
+            </a>
+            <nav class="hf-nav">
+                <ul>
+                    <li><a href="contacto.html">Contáctenos</a></li>
+                    <li><a href="horarios.html">Horarios</a></li>
+                    <li><a href="ubicacion.html" class="activo">Ubicación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="espaciador-nav"></div>
+
+    <div class="contenedor">
+        <div id="ubicacion" class="seccion" style="margin-top: 20px;">
+            <h2>Ubicación</h2>
+            <p>Ptge. de Paca Soler, 18, 08028 Barcelona.</p>
+            <div class="mapa-contenedor">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.8115598686154!2d2.1205616!3d41.3753484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4994e7fbb94a9%3A0x8e4c8a17c395ff13!2sCentro%20Cristiano%20Levantate%20y%20Resplandece%20Oassis%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1711842960000!5m2!1ses!2ses" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contenedor footer-info">
+            <img src="LOGOO.png" alt="Logo" class="footer-logo">
+            <h3>¡Bendecidos y Transformados por la Palabra!</h3>
+            <div class="footer-redes">
+                <a href="https://www.facebook.com/profile.php?id=61576344863680" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.instagram.com/levantateyresplandece_oassis/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p class="copyright">© 2026 Asociación de Ayuda Cívica - Barcelona</p>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById("mainHeader");
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) { header.classList.add("header-opaco"); } 
+            else { header.classList.remove("header-opaco"); }
+            if (scrollTop > lastScrollTop && scrollTop > 100) { header.classList.add("header-oculto"); } 
+            else { header.classList.remove("header-oculto"); }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+        }, false);
+    </script>
+</body>
+</html>
