@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asociación de Ayuda Cívica Levántate y Resplandece Oassis | Barcelona</title>
+    <title>Centro Cristiano Levántate y Resplandece Oassis | Barcelona</title>
+    <link rel="icon" type="image/png" href="LOGO PNG.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,12 +28,15 @@
                     <li><a href="ubicacion.html">Ubicación</a></li>
                 </ul>
             </nav>
+            <div class="menu-toggle" onclick="document.querySelector('.header-flotante-contenedor').classList.toggle('menu-abierto')">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </div>
         </div>
     </header>
 
     <section class="bienvenida-visual">
         <div class="contenedor">
-            <h1 style="margin: 0 0 15px 0; font-size: 1.8rem; font-family: 'Cinzel Decorative', serif; text-shadow: 2px 2px 5px rgba(0,0,0,0.6); color: #fff; line-height: 1.2;">Centro Cristiano Levántate y Resplandece Oassis</h1>
+            <h1 style="margin: 0 0 15px 0; font-size: 1.5rem; font-family: 'Cinzel Decorative', serif; text-shadow: 2px 2px 5px rgba(0,0,0,0.6); color: #fff; line-height: 1.2;">Centro Cristiano Levántate y Resplandece Oassis</h1>
             <span class="etiqueta-bienvenidos">¡BIENVENIDOS!</span>
             <h2 class="titulo-grande">¡SOMOS UNA GRAN FAMILIA!</h2>
             <div class="galeria-collage-contenedor">
@@ -112,7 +116,10 @@
                 <a href="https://www.instagram.com/levantateyresplandece_oassis/" target="_blank" rel="noopener noreferrer">Instagram</a>
                 <a href="#">YouTube</a>
             </div>
-            <p class="copyright">© 2026 Asociación de Ayuda Cívica - Barcelona</p>
+            <p class="copyright">
+                © 2026 Todos los derechos reservados.<br>
+                <a href="politica-privacidad.html" style="color: inherit; text-decoration: underline; margin-top: 8px; display: inline-block;">Política de Privacidad</a>
+            </p>
         </div>
     </footer>
 
@@ -127,6 +134,18 @@
             else { header.classList.remove("header-oculto"); }
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
         }, false);
+
+        // Prevenir click derecho y arrastre en imágenes
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>

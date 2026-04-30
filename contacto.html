@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctenos - Asociación de Ayuda Cívica Levántate y Resplandece Oassis | Barcelona</title>
+    <title>Contáctenos - Centro Cristiano Levántate y Resplandece Oassis | Barcelona</title>
+    <link rel="icon" type="image/png" href="LOGO PNG.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,6 +28,9 @@
                     <li><a href="ubicacion.html">Ubicación</a></li>
                 </ul>
             </nav>
+            <div class="menu-toggle" onclick="document.querySelector('.header-flotante-contenedor').classList.toggle('menu-abierto')">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </div>
         </div>
     </header>
 
@@ -38,14 +42,7 @@
             <p>¿Tienes alguna pregunta, necesitas oración o deseas saber más de nuestra comunidad? No dudes en escribirnos o llamarnos. Estamos aquí para ti.</p>
             
             <div class="grid-contacto">
-                <div class="info-contacto-card">
-                    <div class="icono-contacto">
-                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-                    </div>
-                    <h3>Visítanos</h3>
-                    <p>Ven y acompáñanos en nuestros servicios. ¡Te esperamos con los brazos abiertos!</p>
-                    <p style="font-weight: bold; margin-top: 15px; color: #333;">Ptge. de Paca Soler, 18<br>08028 Barcelona</p>
-                </div>
+
 
                 <div class="info-contacto-card">
                     <div class="icono-contacto">
@@ -81,7 +78,10 @@
                 <a href="https://www.instagram.com/levantateyresplandece_oassis/" target="_blank" rel="noopener noreferrer">Instagram</a>
                 <a href="#">YouTube</a>
             </div>
-            <p class="copyright">© 2026 Asociación de Ayuda Cívica - Barcelona</p>
+            <p class="copyright">
+                © 2026 Todos los derechos reservados.<br>
+                <a href="politica-privacidad.html" style="color: inherit; text-decoration: underline; margin-top: 8px; display: inline-block;">Política de Privacidad</a>
+            </p>
         </div>
     </footer>
 
@@ -96,6 +96,18 @@
             else { header.classList.remove("header-oculto"); }
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
         }, false);
+
+        // Prevenir click derecho y arrastre en imágenes
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>
