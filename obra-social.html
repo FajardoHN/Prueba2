@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obra Social - Centro Cristiano Levántate y Resplandece Oassis | Barcelona</title>
+    <link rel="icon" type="image/png" href="LOGO PNG.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="mainHeader">
+        <div class="header-flotante-contenedor">
+            <nav class="hf-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="mision.html">Visión</a></li>
+                    <li><a href="obra-social.html" class="activo">Obra Social</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="hf-logo-link">
+                <img src="LOGO PNG.png" alt="Logo" class="hf-logo">
+            </a>
+            <nav class="hf-nav">
+                <ul>
+                    <li><a href="contacto.html">Contáctenos</a></li>
+                    <li><a href="horarios.html">Horarios</a></li>
+                    <li><a href="ubicacion.html">Ubicación</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" onclick="document.querySelector('.header-flotante-contenedor').classList.toggle('menu-abierto')">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="espaciador-nav"></div>
+
+    <div class="contenedor">
+        <div class="obra-social-header">
+            <h2>Nuestra Obra Social</h2>
+            <h3 style="color: var(--rojo-vino); margin-top: -10px; margin-bottom: 20px; font-size: 1.1rem; font-weight: normal; font-style: italic; opacity: 0.9;">Associació d'Ajuda Cívica i Assistencial Levántate y Resplandece Oassis</h3>
+            <p>Extendiendo una mano amiga a quienes más lo necesitan en la comunidad de Barcelona.</p>
+        </div>
+
+        <div class="obra-social-premium" style="background-image: url('atardecer.jpg.png');">
+            <div class="osp-overlay">
+                
+                <div class="osp-grid">
+                    <div class="osp-intro">
+                        <img src="manos_comida_v3.png" alt="Manos entregando comida" class="osp-main-img">
+                        <div class="osp-badge">
+                            <span class="osp-badge-numero">Amor</span>
+                            <span class="osp-badge-texto">en Acción</span>
+                        </div>
+                    </div>
+
+                    <div class="osp-tarjetas-container">
+                        <div class="osp-tarjeta glass">
+                            <div class="osp-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
+                            <h3>Reparto de Alimentos y Ropa</h3>
+                            <p>Organizamos entregas de alimentos de primera necesidad y ropa para apoyar a familias e individuos en situación de vulnerabilidad. Creemos que juntos podemos marcar la diferencia y brindar esperanza a través de acciones concretas.</p>
+                        </div>
+                        
+                        <div class="osp-tarjeta glass">
+                            <div class="osp-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <h3>Apoyo Integral y Espiritual</h3>
+                            <p>Además de la ayuda material, proporcionamos orientación, acompañamiento y un espacio seguro donde cada persona es escuchada y valorada con amor y respeto.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contenedor footer-info">
+            <img src="LOGOO.png" alt="Logo" class="footer-logo">
+            <h3>¡Bendecidos y Transformados por la Palabra!</h3>
+            <div class="footer-redes">
+                <a href="https://www.facebook.com/profile.php?id=61576344863680" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.instagram.com/levantateyresplandece_oassis/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p class="copyright">
+                © 2026 Todos los derechos reservados.<br>
+                <a href="politica-privacidad.html" style="color: inherit; text-decoration: underline; margin-top: 8px; display: inline-block;">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById("mainHeader");
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) { header.classList.add("header-opaco"); } 
+            else { header.classList.remove("header-opaco"); }
+            if (scrollTop > lastScrollTop && scrollTop > 100) { header.classList.add("header-oculto"); } 
+            else { header.classList.remove("header-oculto"); }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+        }, false);
+
+        // Prevenir click derecho y arrastre en imágenes
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
